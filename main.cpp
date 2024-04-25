@@ -34,42 +34,77 @@ int main()
 	Shader shaderProgram("default.vert", "default.frag");
 
 	GLfloat vertices[] =
-	{
-		// Vertex coordinates      // Color             // Texture coordinates
-		// Front face
-		-0.5f, -0.5f,  0.5f,       1.0f, 0.0f, 0.0f,// Front bottom left 0
-		 0.5f, -0.5f,  0.5f,       0.0f, 1.0f, 0.0f,// Front bottom right 1
-		 0.5f,  0.5f,  0.5f,       0.0f, 0.0f, 1.0f,// Front top right 2
-		-0.5f,  0.5f,  0.5f,       1.0f, 1.0f, 1.0f,// Front top left 3
+{
+	// Vertex coordinates      // Color             // Texture coordinates
+	// Front face
+	-0.5f, -0.5f,  0.5f,       1.0f, 0.0f, 0.0f,// Front bottom left 0
+	 0.5f, -0.5f,  0.5f,       0.0f, 1.0f, 0.0f,// Front bottom right 1
+	 0.5f,  0.5f,  0.5f,       0.0f, 0.0f, 1.0f,// Front top right 2
+	-0.5f,  0.5f,  0.5f,       1.0f, 1.0f, 1.0f,// Front top left 3
 
-		// Back face
-		-0.5f, -0.5f, -0.5f,       1.0f, 0.0f, 0.0f,// Back bottom left 4
-		 0.5f, -0.5f, -0.5f,       0.0f, 1.0f, 0.0f,// Back bottom right 5
-		 0.5f,  0.5f, -0.5f,       0.0f, 0.0f, 1.0f,// Back top right 6
-		-0.5f,  0.5f, -0.5f,       1.0f, 1.0f, 1.0f,// Back top left 7
+	// Back face
+	-0.5f, -0.5f, 0.3f,       1.0f, 0.0f, 0.0f,// Back bottom left 4
+	 0.5f, -0.5f, 0.3f,       0.0f, 1.0f, 0.0f,// Back bottom right 5
+	 0.5f,  0.5f, 0.3f,       0.0f, 0.0f, 1.0f,// Back top right 6
+	-0.5f,  0.5f, 0.3f,       1.0f, 1.0f, 1.0f,// Back top left 7
 
-		// Top face
-		-0.5f,  0.5f,  0.5f,       1.0f, 0.0f, 0.0f, // Front top left 8
-		 0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f, // Front top right 9
-		 0.5f,  0.5f, -0.5f,       0.0f, 0.0f, 1.0f,// Back top right 10
-		-0.5f,  0.5f, -0.5f,       1.0f, 1.0f, 1.0f, // Back top left 11
+	// Top face
+	-0.5f,  0.5f,  0.5f,       1.0f, 0.0f, 0.0f, // Front top left 8
+	 0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f, // Front top right 9
+	 0.5f,  0.5f,  0.3f,       0.0f, 0.0f, 1.0f,// Back top right 10
+	-0.5f,  0.5f,  0.3f,       1.0f, 1.0f, 1.0f, // Back top left 11
 
-		// Bottom face
-		-0.5f, -0.5f,  0.5f,       1.0f, 0.0f, 0.0f,// Front bottom left 12
-		 0.5f, -0.5f,  0.5f,       0.0f, 1.0f, 0.0f, // Front bottom right 13
-		 0.5f, -0.5f, -0.5f,       0.0f, 0.0f, 1.0f, // Back bottom right 14
-		-0.5f, -0.5f, -0.5f,       1.0f, 1.0f, 1.0f // Back bottom left 15
-	};
+	// Bottom face
+	-0.5f, -0.5f,  0.5f,       1.0f, 0.0f, 0.0f,// Front bottom left 12
+	 0.5f, -0.5f,  0.5f,       0.0f, 1.0f, 0.0f, // Front bottom right 13
+	 0.5f, -0.5f,  0.3f,       0.0f, 0.0f, 1.0f, // Back bottom right 14
+	-0.5f, -0.5f,  0.3f,       1.0f, 1.0f, 1.0f, // Back bottom left 15
 
-	GLuint indices[] =
-	{
-		0, 1, 2, 2, 3, 0,     // Front face
-		4, 5, 6, 6, 7, 4,     // Back face
-		8, 9, 10, 10, 11, 8,  // Top face
-		12, 13, 14, 14, 15, 12, // Bottom face
-		0, 3, 7, 7, 4, 0,     // Left face
-		1, 2, 6, 6, 5, 1  // Left face
-	};
+	//bingkai dalam
+	//front face
+	-0.3f, -0.3f,  0.5f,       1.0f, 0.0f, 0.0f,// Front bottom left 16
+	 0.3f, -0.3f,  0.5f,       0.0f, 1.0f, 0.0f,// Front bottom right 17
+	 0.3f,  0.3f,  0.5f,       0.0f, 0.0f, 1.0f,// Front top right 18
+	-0.3f,  0.3f,  0.5f,       1.0f, 1.0f, 1.0f,// Front top left 19
+
+	// Back face
+	-0.3f, -0.3f, 0.3f,       1.0f, 0.0f, 0.0f,// Back bottom left 20
+	 0.3f, -0.3f, 0.3f,       0.0f, 1.0f, 0.0f,// Back bottom right 21
+	 0.3f,  0.3f, 0.3f,       0.0f, 0.0f, 1.0f,// Back top right 22
+	-0.3f,  0.3f, 0.3f,       1.0f, 1.0f, 1.0f,// Back top left 23
+
+	// Top face
+	-0.3f,  0.3f,  0.5f,       1.0f, 0.0f, 0.0f, // Front top left 24
+	 0.3f,  0.3f,  0.5f,       0.0f, 1.0f, 0.0f, // Front top right 25
+	 0.3f,  0.3f,  0.3f,       0.0f, 0.0f, 1.0f,// Back top right 26
+	-0.3f,  0.3f,  0.3f,       1.0f, 1.0f, 1.0f, // Back top left 27
+
+	// Bottom face
+	-0.3f, -0.3f,  0.5f,       1.0f, 0.0f, 0.0f,// Front bottom left 28
+	 0.3f, -0.3f,  0.5f,       0.0f, 1.0f, 0.0f, // Front bottom right 29
+	 0.3f, -0.3f,  0.3f,       0.0f, 0.0f, 1.0f, // Back bottom right 30
+	-0.3f, -0.3f,  0.3f,       1.0f, 1.0f, 1.0f // Back bottom left 31
+};
+
+GLuint indices[] =
+{
+	// Front face
+	0, 1, 17, 17, 16, 0,
+	0, 16, 3, 3, 16, 19,
+	3, 2, 19, 19, 18, 2,
+	2, 18, 17, 17, 1, 2,
+
+	//side face, bisa diperbaiki lagi
+	2, 6, 7, 7, 2, 3,
+	3, 7, 4, 4, 3, 0,
+	0, 15, 1, 1, 5, 15,
+	15, 20, 16, 16, 20, 17,
+	17, 21, 20, 20, 4, 7,
+	7, 20, 23, 23, 7, 6,
+	6, 23, 22, 22, 6, 5,
+	5, 1, 2, 2, 6, 5,
+	5, 21, 22
+};
 
 	GLuint VAO, VBO, EBO;
 	glGenVertexArrays(1, &VAO);
